@@ -1,19 +1,19 @@
-interface ProdOrder {
+export interface ProdOrder {
   name: string;
   amount: number;
 }
 
-interface ProdOptionOrder {
+export interface ProdOptionOrder {
   name: string;
   amount: number;
 }
 
-interface Order {
+export interface Order {
   product: ProdOrder;
   options: ProdOptionOrder[];
 }
 
 export interface Ordered {
-  table: string;
+  tableNum: string;
   order: Order[];
 }
