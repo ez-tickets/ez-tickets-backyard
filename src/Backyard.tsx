@@ -1,23 +1,25 @@
 import { Fragment, useState } from "react";
-import {backyardStyle} from "./Backyard.css";
-import OrderTable from "./components/OrderTable";
-import type { Ordered } from "./dataTypes";
+import { backyardStyle } from "./Backyard.css";
 import FinishedModal from "./components/FinishedModal";
+import OrderTable from "./components/OrderTable";
+import type { NewOrdered } from "./dataTypes";
 
 function Backyard() {
-  const [orderTable, setOrderTable] = useState<Ordered[]>([]);
+  const [orderTable, setOrderTable] = useState<NewOrdered[]>([]);
+  const [idNum, setIdNum] = useState<number>(1);
+  const [colorIndex, setColorIndex] = useState<number>(0);
   const [isFlag, setIsFlag] = useState<boolean>(false);
 
-  //demo
-  const [num, setNum] = useState<number>(1);
+  const colorList = ["#EF476F", "#FFD166", "#06D6A0", "#118AB2"];
 
-  function rand() {
-    return Math.floor(Math.random() * 5 + 1);
-  }
+  //仮のorderを生成してカラープロパティーを追加した後のdemoデータ生成ハンドラー
+  const createOrder = () => {
+    const rand = () => {
+      return Math.floor(Math.random() * 5 + 1);
+    };
 
-  function createOrder() {
-    setNum((prev) => prev + 1);
     const randTable = Math.floor(Math.random() * 16 + 1);
+
     const menuList = [
       "パフェ",
       "人参",
@@ -35,9 +37,10 @@ function Backyard() {
       "生クリーム",
     ];
 
-    const order: Ordered = {
-      id: num,
+    const order: NewOrdered = {
+      id: idNum,
       tableNum: `${randTable}`,
+      color: colorList[colorIndex],
       order: [
         {
           product: {
@@ -102,11 +105,17 @@ function Backyard() {
       ],
     };
     setOrderTable([...orderTable, order]);
-  }
+    setIdNum((prev) => prev + 1);
+
+    if (colorIndex >= 3) {
+      setColorIndex(0);
+    } else {
+      setColorIndex((prev) => prev + 1);
+    }
+  };
 
   return (
     <Fragment>
-      {/*demo*/}
       <button
         type={"button"}
         onClick={createOrder}
@@ -119,7 +128,15 @@ function Backyard() {
         <OrderTable orderTable={orderTable} setIsFlag={setIsFlag} />
       </div>
 
-      { isFlag ? <FinishedModal setIsFlag={setIsFlag} /> : "" }
+      {isFlag ? (
+        <FinishedModal
+          setIsFlag={setIsFlag}
+          orderTable={orderTable}
+          setOrderTable={setOrderTable}
+        />
+      ) : (
+        ""
+      )}
     </Fragment>
   );
 }

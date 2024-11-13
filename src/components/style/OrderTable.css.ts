@@ -46,7 +46,6 @@ export const orderTableStyle = {
     padding: "2px 0",
     textShadow: "2px 2px 5px black",
     textIndent: "1rem",
-    backgroundColor: "gray",
     borderBottom: "1px solid white",
     zIndex: 10,
   }),
