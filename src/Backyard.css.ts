@@ -6,7 +6,7 @@ globalStyle("body", {
   backgroundColor: "rgba(35,35,35,1)",
 });
 
-export const appStyle = {
+export const backyardStyle = {
   grid: style({
     backgroundColor: "rgba(35,35,35,1)",
     display: "grid",
@@ -18,4 +18,12 @@ export const appStyle = {
     gap: "15px 0",
     scrollbarWidth: "none",
   }),
+
+  demo: style({
+    position: "absolute",
+    top: 0,
+    right: 0,
+    zIndex: 1000,
+    backgroundColor: "gold",
+  })
 };
