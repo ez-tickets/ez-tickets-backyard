@@ -1,6 +1,6 @@
-import {style} from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 
-export const finishedModalStyle = ({
+export const finishedModalStyle = {
   overlay: style({
     position: "absolute",
     top: 0,
@@ -8,8 +8,8 @@ export const finishedModalStyle = ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: '100%',
-    height: '100vh',
+    width: "100%",
+    height: "100vh",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     zIndex: 100,
   }),
@@ -54,4 +54,4 @@ export const finishedModalStyle = ({
     borderRadius: "5px",
     boxShadow: "2px 2px 3px rgba(0, 0, 0, 0.4)",
   }),
-})
+};

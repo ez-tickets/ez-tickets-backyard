@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import type { ProdOptionOrder } from "../dataTypes";
-import {optionStyle} from "./style/Option.css";
+import { optionStyle } from "./style/Option.css";
 
 type OptionProps = {
   option: ProdOptionOrder;

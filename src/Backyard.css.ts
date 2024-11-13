@@ -14,9 +14,8 @@ export const backyardStyle = {
     gridTemplateRows: "repeat(2, 1fr)",
     placeItems: "center",
     height: "100svh",
-    overflowY: "scroll",
+    overflowY: "hidden",
     gap: "15px 0",
-    scrollbarWidth: "none",
   }),
 
   demo: style({
@@ -25,5 +24,5 @@ export const backyardStyle = {
     right: 0,
     zIndex: 1000,
     backgroundColor: "gold",
-  })
+  }),
 };
