@@ -1,11 +1,31 @@
 import { style } from "@vanilla-extract/css";
 
 export const orderTableStyle = {
-  orderContainer: style({
+  tableContainer: style({
     position: "relative",
     width: "320px",
     height: "350px",
     color: "white",
+    border: "1px solid white",
+    overflowY: "scroll",
+    "::-webkit-scrollbar": {
+      width: "5px",
+    },
+    "::-webkit-scrollbar-track": {
+      background: "#ffffff",
+    },
+    "::-webkit-scrollbar-thumb": {
+      background: "#c7c7c7",
+      borderRadius: "4px",
+    },
+  }),
+
+  selectedTableContainer: style({
+    position: "relative",
+    width: "320px",
+    height: "350px",
+    color: "white",
+    backgroundColor: "#ffac00",
     border: "1px solid white",
     overflowY: "scroll",
     "::-webkit-scrollbar": {

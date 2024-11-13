@@ -14,6 +14,7 @@ export interface Order {
 }
 
 export interface Ordered {
+  id: number;
   tableNum: string;
   order: Order[];
 }

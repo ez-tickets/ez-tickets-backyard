@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import type { ProdOptionOrder } from "../dataTypes";
-import { optionsStyle } from "./style/Options.css";
+import {optionStyle} from "./style/Option.css";
 
 type OptionProps = {
   option: ProdOptionOrder;
@@ -9,7 +9,7 @@ type OptionProps = {
 function Option({ option }: OptionProps) {
   return (
     <Fragment>
-      <p className={optionsStyle.optionContainer}>
+      <p className={optionStyle.option}>
         {option.name} <span>x {option.amount}</span>
       </p>
     </Fragment>
