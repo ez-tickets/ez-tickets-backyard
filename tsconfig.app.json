@@ -17,6 +17,11 @@
 
     "types": ["vitest/globals", "@testing-library/jest-dom"],
 
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    },
+
     /* Linting */
     "strict": true,
     "noFallthroughCasesInSwitch": true
