@@ -26,8 +26,11 @@ function ConfirmationModal({orderId, tableId, tableOrders, setTableOrders, modal
   return (
       // @ts-ignore react version incompatible
     <Modal isOpen={modalFlag} style={confirmationContainer} onRequestClose={() => setModalFlag(false)}>
-      <div>
-        <h2 className={confirmationModalStyle.text}>注文を完了しますか？</h2>
+      <div className={confirmationModalStyle.frame}>
+        <div className={confirmationModalStyle.textContainer}>
+          <div className={confirmationModalStyle.table}>{tableId}番テーブル</div>
+          <div className={confirmationModalStyle.text}>注文を完了しますか？</div>
+        </div>
         <div className={confirmationModalStyle.buttonContainer}>
           <button
               className={confirmationModalStyle.noButton}
