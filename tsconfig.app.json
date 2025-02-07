@@ -15,6 +15,11 @@
     "jsx": "react-jsx",
     "composite": true,
 
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    },
+
     /* Linting */
     "strict": true,
     "noFallthroughCasesInSwitch": true
